@@ -3,7 +3,7 @@ Este documento describe las estructuras y funcionalidades de las entidades Shopp
 
 ### 1. Entidad ShoppingCar (Carrito de Compras)
 
-    La entidad ShoppingCar representa el carrito de compras de un usuario, conteniendo los productos que ha seleccionado para una posible compra. Su diseño busca optimizar el rendimiento al incrustar datos relevantes y permitir una gestión flexible de los ítems.
+La entidad ShoppingCar representa el carrito de compras de un usuario, conteniendo los productos que ha seleccionado para una posible compra. Su diseño busca optimizar el rendimiento al incrustar datos relevantes y permitir una gestión flexible de los ítems.
 
 ### Estructura del Objeto
 
@@ -36,7 +36,7 @@ Propiedad   Tipo    Descripción     Obligatorio     Notas
 
 ### 2. Entidad Offer (oferta)
 
-    La entidad Offer representa una oferta o descuento que puede ser aplicada a productos, categorías o al total de un carrito de compras. Su diseño permite una gran flexibilidad para definir diferentes tipos de promociones y gestionar su validez y uso.
+La entidad Offer representa una oferta o descuento que puede ser aplicada a productos, categorías o al total de un carrito de compras. Su diseño permite una gran flexibilidad para definir diferentes tipos de promociones y gestionar su validez y uso.
 
 ### Estructura del Objeto
 ```ts
