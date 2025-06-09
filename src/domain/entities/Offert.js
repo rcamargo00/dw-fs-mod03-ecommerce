@@ -76,5 +76,59 @@ class Offer {
     this.createdAt = createdAt;
     this.updatedAt = updatedAt;
   }
+  
+  // Implementación
+  
+  /*
+   * Verifica si la oferta es válida en la fecha actual.
+   * @returns {boolean} True si la oferta está activa y dentro de su período de validez.
+   */
+  isValid() {
+    const now = new Date();
+    return this.isActive && now >= this.startDate && now <= this.endDate;
+  }
+
+  /*
+   * Incrementa el contador de usos de la oferta.
+   * @returns {boolean} True si el contador se incrementó, false si se alcanzó el límite.
+   */
+  incrementUsage() {
+    if (this.usageLimit !== null && this.usedCount >= this.usageLimit) {
+      return false; // Límite de uso alcanzado
+    }
+    this.usedCount++;
+    this.updatedAt = new Date();
+    return true;
+  }
+
+  /*
+   * Convierte la entidad a un objeto plano para almacenamiento.
+   * @returns {Object} Objeto plano de la oferta.
+   */
+  toObject() {
+    return {
+      id: this.id,
+      name: this.name,
+      type: this.type,
+      value: this.value,
+      minimumPurchaseAmount: this.minimumPurchaseAmount,
+      startDate: this.startDate,
+      endDate: this.endDate,
+      isActive: this.isActive,
+      usageLimit: this.usageLimit,
+      usedCount: this.usedCount,
+      appliesTo: this.appliesTo,
+      productsAffected: this.productsAffected,
+      categoriesAffected: this.categoriesAffected,
+      couponCode: this.couponCode,
+      buyQuantity: this.buyQuantity,
+      getQuantity: this.getQuantity,
+      getDiscountPercentage: this.getDiscountPercentage,
+      usersAllowed: this.usersAllowed,
+      maxUsesPerUser: this.maxUsesPerUser,
+      createdAt: this.createdAt,
+      updatedAt: this.updatedAt,
+    };
+  }
 }
 module.exports = Offer;
